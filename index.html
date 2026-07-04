@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 450px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+        .inline-label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+    
+    <!-- Form submits directly to Web3Forms API -->
+    <form action="https://web3forms.com" method="POST">
+        
+        <!-- Required hidden field containing your Web3Forms access token -->
+        <input type="hidden" name="access_key" value="4d4ad0ef-04e0-4eed-95bc-3afe21d0f086">
+
+        <!-- Optional: Redirects users to a success page after submission -->
+        <!-- <input type="hidden" name="redirect" value="https://web3forms.com"> -->
+
+        <!-- Text Input -->
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
+        </div>
+
+        <!-- Email Input -->
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com">
+        </div>
+
+        <!-- Dropdown Selection -->
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="">-- Select Options --</option>
+                <option value="us">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="ca">Canada</option>
+                <option value="ng">Nigeria</option>
+            </select>
+        </div>
+
+        <!-- Radio Buttons -->
+        <div class="form-group">
+            <label>Preferred Contact Method</label>
+            <input type="radio" id="contact_email" name="contact_method" value="email" checked>
+            <label for="contact_email" class="inline-label">Email</label>
+            
+            <input type="radio" id="contact_phone" name="contact_method" value="phone">
+            <label for="contact_phone" class="inline-label">Phone</label>
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="form-group">
+            <label>Interests</label>
+            <input type="checkbox" id="coding" name="interests_coding" value="Yes">
+            <label for="coding" class="inline-label">Coding</label>
+            
+            <input type="checkbox" id="design" name="interests_design" value="Yes">
+            <label for="design" class="inline-label">Design</label>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+            <label for="message">Additional Comments</label>
+            <textarea id="message" name="message" placeholder="Type your message here..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Form</button>
+        
+    </form>
+
+</body>
+</html>
